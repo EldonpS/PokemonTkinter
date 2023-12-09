@@ -1,0 +1,31 @@
+@startuml battle
+actor Player
+participant Pokemon1
+participant Pokemon2
+participant Battle
+
+Player -> Battle: start_battle()
+activate Battle
+
+Battle -> Pokemon1: initialize()
+Battle -> Pokemon2: initialize()
+
+Player -> Battle: choose()
+Battle -> Player: appearSong.stop()
+Battle -> Player: play selectSong
+
+Player -> Battle: battle_ui()
+Battle -> Player: battleSong.play()
+Battle -> Player: load_pokemon_images()
+Battle -> Battle: get_pokemon_by_choice(pokemon_name)
+Battle -> Pokemon1: calculate_damage(skill, opponent__element)
+Battle -> Pokemon2: calculate_damage(skill, opponent__element)
+Battle -> Pokemon1: is_super_effective(opponent__element)
+Battle -> Pokemon1: is_not_very_effective(opponent__element)
+Battle -> Pokemon2: is_super_effective(opponent__element)
+Battle -> Pokemon2: is_not_very_effective(opponent__element)
+
+Battle -> Player: display_winner()
+Battle -> Player: battleSong.stop()
+Battle -> Player: play victorySong
+@enduml

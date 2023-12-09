@@ -1,0 +1,12 @@
+@startuml alur
+
+left to right direction
+(*) --> ChoosePokemon
+ChoosePokemon --> Battle
+Battle --> Display
+Display --> Home 
+Home --> ChoosePokemon
+Display --> KeluarProgram
+KeluarProgram --> (*)
+
+@enduml

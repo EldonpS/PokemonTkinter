@@ -1,0 +1,42 @@
+@startuml skill
+
+class NormalSkill {
+  - name: String
+  - damage: int
+  - element: String
+  + get_name(): String
+  + get_damage(): int
+  + get_element(): String
+}
+
+class NormalSkill {
+  + set_element(element: String)
+}
+
+class GrassSkill {
+  <<inherit>> NormalSkill
+}
+
+class FireSkill {
+  <<inherit>> NormalSkill
+}
+
+class WaterSkill {
+  <<inherit>> NormalSkill
+}
+
+class ElectricSkill {
+  <<inherit>> NormalSkill
+}
+
+class GroundSkill {
+  <<inherit>> NormalSkill
+}
+
+NormalSkill <-- GrassSkill
+NormalSkill <-- FireSkill
+NormalSkill <-- WaterSkill
+NormalSkill <-- ElectricSkill
+NormalSkill <-- GroundSkill
+
+@enduml

@@ -1,0 +1,85 @@
+@startuml pokemon
+
+class Pokemon {
+  - name: String
+  - element: String
+  - base_hp: int
+  - base_atk: int
+  - base_armor: int
+  - hp: int
+  - max_hp: int
+  - atk: int
+  - armor: int
+  + reset_stats()
+  + calculate_damage(skill: Skill, opponent_element: String): int
+  + is_super_effective(opponent_element: String): boolean
+  + is_not_very_effective(opponent_element: String): boolean
+  + get_name(): String
+  + get_element(): String
+  + get_hp(): int
+  + get_max_hp(): int
+  + get_atk(): int
+  + get_armor(): int
+  + getskills_info(): List<Map<String, Object>>
+}
+
+class Bulbasaur{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+
+}
+
+class Ivysaur{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Charmander{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Charmeleon{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Squirtle{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Wartortle{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Sandslash{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+class Pikachu{
+    +calculate_damage
+    +is_super_effective
+    +is_not_very_effective
+}
+
+
+Pokemon <-- Bulbasaur
+Pokemon <-- Ivysaur
+Pokemon <-- Charmander
+Pokemon <-- Charmeleon
+Pokemon <-- Squirtle
+Pokemon <-- Wartortle
+Pokemon <-- Sandslash
+Pokemon <-- Pikachu
+
+@enduml
